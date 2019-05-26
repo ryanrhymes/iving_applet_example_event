@@ -2,16 +2,13 @@ version: '3.7'
 
 services:
 
-  app1:
-    build:
-      context: .
-      dockerfile: ./dockerfile_app1
-    env_file:
-      - ./config.env
+  app:
+    image: node:alpine
+    volumes:
+      - ./app.js:/root/app.js
+    entrypoint: node /root/app.js
 
-  app2:
-    build:
-      context: .
-      dockerfile: ./dockerfile_app2
-    env_file:
-      - ./config.env
+
+volumes:
+  app.js:
+    name: app.js
