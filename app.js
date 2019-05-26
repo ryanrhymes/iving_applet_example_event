@@ -24,6 +24,11 @@ function main() {
     console.log('disconnected from iving event hub');
   });
 
+
+  setInterval(() => {
+    console.log('heartbeat ...')
+  }, 60 * 1000)
+
 }
 
 
