@@ -11,8 +11,6 @@ function main() {
 
   client.on('data', data => {
     console.log('======= event arrived =======');
-    console.log(data);
-    console.log(data.toString('utf8'));
     console.log(JSON.parse(data.toString('utf8')));
   });
 
