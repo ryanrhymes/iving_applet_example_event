@@ -10,7 +10,7 @@ function main() {
   });
 
   client.on('data', data => {
-    console.log('======= event arrived =======');
+    console.log(`======= event arrived ======= ${Date.now()}`);
     console.log(JSON.parse(data.toString('utf8')));
   });
 
