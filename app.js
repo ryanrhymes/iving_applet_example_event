@@ -14,6 +14,12 @@ function main() {
     console.log(data.toString())
   });
 
+
+  client.on('error', err => {
+    console.error('error: ' + err);
+  });
+
+
   client.on('end', () => {
     console.log('disconnected from iving event hub');
   });
