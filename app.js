@@ -11,7 +11,7 @@ function main() {
 
   client.on('data', data => {
     console.log('======= event arrived =======');
-    console.log(data.toString())
+    console.log(JSON.stringify(data))
   });
 
 
