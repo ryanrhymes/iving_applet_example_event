@@ -20,13 +20,13 @@ function main() {
   });
 
 
-  client.on('end', () => {
-    console.log('disconnected from iving event hub');
+  client.on('close', () => {
+    console.log('disconnectex from iving event hub');
   });
 
 
   setInterval(() => {
-    console.log('heartbeat ...');
+    console.log('event heartbeat ...');
   }, 60 * 1000)
 
 }
