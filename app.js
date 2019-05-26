@@ -6,12 +6,13 @@ function main() {
 
   let client = net.createConnection(sockPath, () => {
     console.log('connected to iving event hub');
-    client.write('world!\r\n');
+    client.write('hello world\r\n');
   });
 
   client.on('data', data => {
     console.log('======= event arrived =======');
-    console.log(JSON.stringify(data))
+    console.log(JSON.stringify(data));
+    console.log(data.data.toString('utf8'));
   });
 
 
@@ -26,7 +27,7 @@ function main() {
 
 
   setInterval(() => {
-    console.log('heartbeat ...')
+    console.log('heartbeat ...');
   }, 60 * 1000)
 
 }
