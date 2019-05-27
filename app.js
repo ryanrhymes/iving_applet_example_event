@@ -6,7 +6,8 @@ function main() {
 
   let client = net.createConnection(sockPath, () => {
     console.log('connected to iving event hub');
-    client.write('hello world\r\n');
+    let msg = JSON.stringify({ info : 'hello world' });
+    client.write(msg);
   });
 
   client.on('data', data => {
